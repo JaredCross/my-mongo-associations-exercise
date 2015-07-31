@@ -1,2 +1,35 @@
 <h1>You clicked {{meetup.name}}</h1>
 <p>{{meetup.description}}</p>
+<section>
+  Location: {{location.name}}
+</section>
+<section>
+  Address: {{location.address}}
+</section>
+<div>
+  <p>Members:</p>
+  <ul>
+  {{#each members}}
+    <li>{{name}}</li>
+ {{/each}}
+ </ul>
+</div>
+<div>
+  <p>Followers:</p>
+  <ul>
+  {{#each followers}}
+    <li>{{name}}</li>
+ {{/each}}
+ </ul>
+</div>
+
+<div>
+  <p>Also may be interested in</p>
+  <ul>
+  {{#each alsoFollow}}
+    <li>{{name}}</li>
+ {{/each}}
+ </ul>
+</div>
+
+<a href='/'>Go Back</a>
