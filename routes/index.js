@@ -20,7 +20,6 @@ router.get('/meetups/:id', function (req, res, next) {
       users.find({_id: { $in: meetup.memberIds}}, function (err, members) {
         users.find({follows : meetup._id}, function (err, followers) {
           var alsoFollowArr = functions(members, followers, meetup._id);
-          console.log(alsoFollowArr);
           meetups.find({_id: {$in: alsoFollowArr}}, function (err, alsoFollow) {
             res.render('show',
               {
